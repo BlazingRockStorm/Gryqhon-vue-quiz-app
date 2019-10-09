@@ -3,24 +3,16 @@
 </template>
 
 <script>
-  export default  {
-    name: 'QuestionsBox',
-    props: [],
-    mounted() {
-
-    },
-    data() {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-    computed: {
-
-    }
-}
+export default {
+  name: "QuestionsBox",
+  props: [],
+  mounted() {},
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {}
+};
 </script>
 
 <style>
