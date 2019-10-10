@@ -1,8 +1,8 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron>
-      <template v-slot:lead>
-        Some questions here
+      <template v-slot:lead v-html="innerHTML">
+        {{ decodeHtml(currentQuestion.question) }}
       </template>
 
       <hr class="my-4" />
@@ -12,7 +12,7 @@
       </p>
 
       <b-button variant="primary" href="#">Submit</b-button>
-      <b-button variant="success" href="#">Next</b-button>
+      <b-button @click="next" variant="success">Next</b-button>
     </b-jumbotron>
   </div>
 </template>
@@ -20,12 +20,23 @@
 <script>
 export default {
   name: "QuestionsBox",
-  props: [],
-  mounted() {},
+  props: {
+    currentQuestion: Object,
+    next: Function
+  },
+  mounted() {
+    console.log(this.currentQuestion)
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    decodeHtml: function (html) {
+      var txt = document.createElement("textarea");
+      txt.innerHTML = html;
+      return txt.value;
+    }
+  },
   computed: {}
 };
 </script>
