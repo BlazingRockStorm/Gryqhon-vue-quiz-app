@@ -89,7 +89,7 @@ export default {
         this.selectedIndex === index &&
         this.correctIndex !== index
       ) {
-        answerClass = "incorrect";
+        answerClass = "wrong";
       }
       return answerClass;
     }
