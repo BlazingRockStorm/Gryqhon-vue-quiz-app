@@ -7,7 +7,7 @@
 
       <b-list-group>
         <b-list-group-item
-          v-for="(answer, index) in answers"
+          v-for="(answer, index) in shuffledAnswers"
           :key="index"
           @click.prevent="selectAnswer(index)"
           :class="answerClass(index)"
@@ -48,7 +48,6 @@ export default {
     return {
       selectedIndex: null,
       correctIndex: null,
-      shuffleAnswers: [],
       answered: false
     };
   },
